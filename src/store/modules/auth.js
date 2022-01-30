@@ -39,7 +39,7 @@ export default {
             axios.defaults.headers.common["Authorization"] =
               "Bearer " + localStorage.getItem("token");
             await commit("setToken", token);
-            router.push({ name: 'dashboard', params: 1 });
+            router.push("/dashboard/1");
           }
 
         }).catch((error) => {

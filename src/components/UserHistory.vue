@@ -74,11 +74,6 @@ export default {
   box-shadow: rgb(0 0 0 / 10%) 0px 1px 20px 0px;
   margin: 3% 0;
   height: 100%;
-  // max-height: 200px;
-  // overflow-y: hidden;
-  // &::-webkit-scrollbar {
-  //   display: none;
-  // }
 }
 
 .history-header {
@@ -93,6 +88,9 @@ export default {
     align-items: center;
     padding: 0 15px;
     border-right: 1px solid rgba(black, 0.3);
+    @media only screen and (max-width: 1024px) {
+      flex-direction: column;
+    }
     .title {
       font-size: 12px;
       font-weight: 700;

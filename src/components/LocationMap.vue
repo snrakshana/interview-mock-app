@@ -6,7 +6,7 @@
         <img src="../assets/images/Path_86.png" alt="" />
       </div>
       <div class="button-group">
-        <div class="reset-btn">Reset Map</div>
+        <div class="reset-btn" >Reset Map</div>
         <!-- <div class="resize-btn">
           <div class="zoom-in">
             <img src="../assets/images/Group_571.png" alt="" />
@@ -39,9 +39,11 @@ export default {
   border-radius: 6px;
   box-shadow: rgb(0 0 0 / 10%) 0px 1px 20px 0px;
   margin-bottom: 3%;
+  height: 100%;
   .map {
     position: relative;
     width: 100%;
+    height: 100%;
     img {
       width: 100%;
       height: 100%;

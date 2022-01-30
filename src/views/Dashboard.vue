@@ -1,4 +1,5 @@
 <template>
+  <navbar></navbar>
   <div class="dashboard-page">
     <div class="header">
       <div class="header-title">
@@ -31,10 +32,11 @@
 
 <script>
 import LocationMap from "../components/LocationMap.vue";
+import Navbar from "../components/Navbar.vue";
 import User from "../components/User.vue";
 import UserHistory from "../components/UserHistory.vue";
 export default {
-  components: { User, LocationMap, UserHistory },
+  components: { User, LocationMap, UserHistory, Navbar },
   name: "Dashboard",
   methods: {
     showLog(id) {
@@ -48,6 +50,9 @@ export default {
 .dashboard-page {
   padding: 0 40px;
   margin-left: 75px;
+  @media only screen and (max-width: 480px) {
+    padding: 0;
+  }
 }
 .header {
   display: flex;
@@ -73,6 +78,9 @@ export default {
         font-size: 13px;
         font-weight: 700;
       }
+      @media only screen and (max-width: 480px) {
+        margin-right: 0;
+      }
     }
     .sos-btn {
       width: 70px;
@@ -92,10 +100,16 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
+  }
   .user-section {
     width: 30%;
     height: 100%;
     padding: 20px 10px 0;
+    @media only screen and (max-width: 768px) {
+      width: 100%;
+    }
   }
   .log-section {
     width: 70%;
@@ -104,15 +118,16 @@ export default {
     flex-direction: column;
     justify-content: flex-start;
     padding: 20px 10px;
+    @media only screen and (max-width: 768px) {
+      width: 100%;
+    }
     .map-section {
-      min-height: 20%;
-      max-height: 50%;
+      height: 50%;
       width: 100%;
     }
 
     .history-section {
-      min-height: 50%;
-      //   height: 80%;
+      height: 50%;
       width: 100%;
     }
   }

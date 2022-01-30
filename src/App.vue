@@ -1,16 +1,12 @@
 <template>
-  <navbar></navbar>
   <div class="page-container">
     <router-view />
   </div>
 </template>
 
 <script>
-import axios from "axios";
 import { mapGetters } from "vuex";
-import Navbar from "./components/Navbar.vue";
 export default {
-  components: { Navbar },
   name: "App",
   beforeCreate() {
     this.$store.commit("initializeStore");
