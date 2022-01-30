@@ -93,7 +93,7 @@ export default {
     }
     .title {
       font-size: 12px;
-      font-weight: 700;
+      font-weight: 800;
       margin-right: 15px;
     }
     .username {
@@ -130,20 +130,22 @@ export default {
 }
 .history-body {
   padding: 20px 20px 0;
+  height: 80%;
 }
 .history-table {
+  height: 100%;
   .table-header {
     display: flex;
     justify-content: space-between;
     .header-title {
       width: 25%;
       font-size: 12px;
-      font-weight: 700;
+      font-weight: 800;
     }
   }
   .table-body {
     margin-top: 2%;
-    max-height: 120px;
+    max-height: 80%;
     overflow-y: scroll;
     &::-webkit-scrollbar {
       display: none;

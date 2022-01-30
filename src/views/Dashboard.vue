@@ -32,10 +32,18 @@
         <user @show="showLog"></user>
       </div>
       <div class="log-section">
-        <div class="map-section">
-          <location-map></location-map>
+        <div
+          class="map-section"
+          :class="[isOpenMap ? 'map-section--expand' : 'map-section--shrink']"
+        >
+          <location-map @expand="openMap"></location-map>
         </div>
-        <div class="history-section">
+        <div
+          class="history-section"
+          :class="[
+            isOpenMap ? 'history-section--shrink' : 'history-section--expand',
+          ]"
+        >
           <user-history></user-history>
         </div>
       </div>
@@ -54,6 +62,7 @@ export default {
   data() {
     return {
       isAlert: false,
+      isOpenMap: false,
     };
   },
   methods: {
@@ -62,6 +71,9 @@ export default {
     },
     showAlert() {
       this.isAlert = !this.isAlert;
+    },
+    openMap() {
+      this.isOpenMap = !this.isOpenMap;
     },
   },
 };
@@ -162,13 +174,25 @@ export default {
       width: 100%;
     }
     .map-section {
-      height: 50%;
       width: 100%;
+      transition: width 0.4s ease;
+      &--expand {
+        height: 50%;
+      }
+      &--shrink {
+        height: 15%;
+      }
     }
 
     .history-section {
-      height: 50%;
       width: 100%;
+      transition: width 0.4s ease;
+      &--expand {
+        height: 85%;
+      }
+      &--shrink {
+        height: 50%;
+      }
     }
   }
 }

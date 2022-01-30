@@ -2,10 +2,17 @@
   <div class="map-container">
     <div class="map">
       <img src="../assets/images/80_cool_grey.png" alt="map" />
+      <div class="map-msg" v-if="!isOpen">live location map here</div>
       <div class="arrow" @click="expand()">
-        <img src="../assets/images/Path_86.png" alt="" />
+        <img src="../assets/images/Path_86.png" alt="" v-if="isOpen" />
+        <img
+          src="../assets/images/Path_86.png"
+          alt=""
+          class="down-arrow"
+          v-else
+        />
       </div>
-      <div class="button-group">
+      <div class="button-group" v-if="isOpen">
         <div class="reset-btn">Reset Map</div>
         <!-- <div class="resize-btn">
           <div class="zoom-in">
@@ -29,8 +36,14 @@ export default {
       default: false,
     },
   },
+  data() {
+    return {
+      isOpen: this.isMapOpen,
+    };
+  },
   methods: {
     expand() {
+      this.isOpen = !this.isOpen;
       this.$emit("expand");
     },
   },
@@ -54,6 +67,15 @@ export default {
       height: 100%;
       object-fit: cover;
     }
+    .map-msg {
+      position: absolute;
+      top: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 12px;
+      text-transform: capitalize;
+      font-weight: 800;
+    }
   }
 }
 .arrow {
@@ -64,6 +86,9 @@ export default {
   img {
     padding: 10px;
     cursor: pointer;
+    &.down-arrow {
+      transform: rotate(180deg);
+    }
   }
 }
 .button-group {
