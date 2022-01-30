@@ -6,6 +6,7 @@
 <li>User will receive a alter when credentials are wrong</li>
 <li>dashboard page will load with the 1st staff's log history</li>
 <li>All the user's id are same in "api/users" endpoint , so I added unique key value for each object in store </li>
+ <li>Alert or Notification design will be visible on message button click (Icon for notification is not provided in asset)</li>
 </ol>
 
 ## Project setup
