@@ -2,11 +2,11 @@
   <div class="map-container">
     <div class="map">
       <img src="../assets/images/80_cool_grey.png" alt="map" />
-      <div class="arrow">
+      <div class="arrow" @click="expand()">
         <img src="../assets/images/Path_86.png" alt="" />
       </div>
       <div class="button-group">
-        <div class="reset-btn" >Reset Map</div>
+        <div class="reset-btn">Reset Map</div>
         <!-- <div class="resize-btn">
           <div class="zoom-in">
             <img src="../assets/images/Group_571.png" alt="" />
@@ -27,6 +27,11 @@ export default {
     isMapOpen: {
       type: Boolean,
       default: false,
+    },
+  },
+  methods: {
+    expand() {
+      this.$emit("expand");
     },
   },
 };

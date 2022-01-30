@@ -51,6 +51,7 @@ export default {
     text-transform: capitalize;
     &:last-child {
       color: rgb(51, 105, 223);
+      cursor: pointer;
     }
   }
 }

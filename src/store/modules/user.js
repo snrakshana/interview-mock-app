@@ -3,14 +3,10 @@ import axios from 'axios';
 export default {
   namespaced: true,
   state: {
-    userId: localStorage.getItem('user_id') || '',
     users: [],
     userLogs: {},
   },
   getters: {
-    userId: state => {
-      return state.userId;
-    },
     users: state => {
       return state.users;
     },
@@ -19,9 +15,6 @@ export default {
     },
   },
   mutations: {
-    setUserId(state, id) {
-      localStorage.setItem("user_id", id);
-    },
     setUsers(state, { user, index }) {
       state.users.push({
         key: index + 1,
