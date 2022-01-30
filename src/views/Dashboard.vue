@@ -199,7 +199,7 @@ export default {
       border-radius: 50%;
       background-color: rgba(253, 237, 241, 255);
       border: 1px solid rgb(252, 35, 79);
-      box-shadow: rgb(252 35 79 / 10%) 0px 1px 20px 0px;
+      box-shadow: rgb(252 35 79 / 10%) 0px 1px 20px 20px;
     }
     .circle--3 {
       position: absolute;
@@ -222,7 +222,7 @@ export default {
       border-radius: 50%;
       background-color: rgba(254, 218, 227, 255);
       border: 1px solid rgb(252, 35, 79);
-      box-shadow: rgb(252 35 79 / 10%) 0px 1px 20px 0px;
+      box-shadow: rgb(252 35 79 / 10%) 0px 1px 20px 20px;
     }
   }
 }
